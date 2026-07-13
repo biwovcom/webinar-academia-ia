@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060504">
+<title>Masterclass Gratis: Monta tu Agencia de Marketing con IA | AGENTIX</title>
+<meta name="description" content="Masterclass gratuita en vivo · Miércoles 15 de julio · 7:00 pm. Aprende a instalar tu propia agencia de marketing con IA y crear campañas que venden, aunque sientas que la tecnología no es lo tuyo. Cupos limitados.">
+<meta property="og:title" content="Usa la IA para vender mucho más, aunque seas principiante">
+<meta property="og:description" content="Masterclass gratis en vivo · Miércoles 15 de julio · 7:00 pm (hora Colombia). Cupos limitados.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     META PIXEL — pega aquí el código base del Pixel de Meta.
+     Evento recomendado al enviar el formulario: "Lead"
+     (ver función enviarRegistro() en el <script> al final,
+     tiene una línea comentada lista para activar: fbq('track','Lead'))
+============================================================ -->
+
+<style>
+:root{
+  --bg:#060402;
+  --bg2:#0c0703;
+  --orange:#FF6A00;
+  --orange2:#FF7A18;
+  --orange-soft:#FFB673;
+  --text:#FFFFFF;
+  --muted:rgba(255,255,255,.66);
+  --muted2:rgba(255,255,255,.44);
+  --glass:rgba(255,255,255,.045);
+  --glass2:rgba(255,255,255,.07);
+  --border:rgba(255,122,24,.30);
+  --border-soft:rgba(255,122,24,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Plus Jakarta Sans','Segoe UI',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ---------- glow background ---------- */
+.glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;opacity:.55;}
+.glow-1{width:640px;height:640px;background:var(--orange);top:-220px;left:-160px;opacity:.28;}
+.glow-2{width:520px;height:520px;background:var(--orange2);bottom:-160px;right:-140px;opacity:.22;}
+.glow-3{width:420px;height:420px;background:var(--orange);top:40%;left:50%;transform:translate(-50%,-50%);opacity:.10;}
+
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px;}
+
+/* ---------- wordmark bg ---------- */
+.wordmark-bg{
+  position:absolute;left:50%;top:0;transform:translateX(-50%);
+  font-size:clamp(6rem,22vw,15rem);
+  font-weight:900;letter-spacing:.02em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(255,122,24,.14);
+  white-space:nowrap;
+  pointer-events:none;z-index:0;
+  user-select:none;
+}
+
+/* ---------- pills / badges ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:99px;
+  font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+  background:rgba(255,106,0,.12);border:1px solid var(--border);
+  color:var(--orange-soft);
+}
+.pill-solid{
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  color:#0a0603;border:none;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#FF3B3B;box-shadow:0 0 8px #FF3B3B;animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ---------- buttons ---------- */
+.btn-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:19px 40px;border-radius:99px;
+  font-size:1.02rem;font-weight:900;letter-spacing:.01em;
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  color:#0a0603;border:none;cursor:pointer;
+  text-decoration:none;
+  box-shadow:0 12px 44px rgba(255,106,0,.42), inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .2s, box-shadow .2s;
+  font-family:inherit;
+}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 18px 60px rgba(255,106,0,.58), inset 0 1px 0 rgba(255,255,255,.35);}
+.btn-cta:active{transform:translateY(-1px);}
+.btn-micro{margin-top:14px;font-size:.8rem;color:var(--muted2);}
+.btn-micro b{color:var(--orange-soft);font-weight:700;}
+
+/* ---------- glass card ---------- */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--border-soft);
+  border-radius:22px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+/* ---------- section shell ---------- */
+section{position:relative;z-index:1;padding:96px 0;}
+.eyebrow{
+  font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--orange-soft);margin-bottom:14px;
+}
+h1,h2,h3{font-weight:900;letter-spacing:-.01em;}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);color:#fff;margin-bottom:18px;}
+.section-sub{color:var(--muted);font-size:1.05rem;max-width:640px;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+
+/* ---------- HERO ---------- */
+.hero{padding:70px 0 90px;position:relative;overflow:hidden;}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:840px;margin:0 auto;}
+.hero h1{
+  font-size:clamp(2.3rem,5.6vw,4.1rem);
+  line-height:1.08;margin:26px 0 20px;
+  background:linear-gradient(180deg,#fff 40%,#ffd9b0 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{font-size:clamp(1.02rem,1.6vw,1.22rem);color:var(--muted);max-width:600px;margin:0 auto 36px;}
+
+/* ---------- BLOQUE 2: problema ---------- */
+.problem-list{list-style:none;margin:34px 0 30px;display:grid;gap:14px;max-width:720px;}
+.problem-list li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:18px 20px;border-radius:16px;
+  background:var(--glass);border:1px solid var(--border-soft);
+}
+.problem-list li::before{
+  content:'✕';flex:none;width:26px;height:26px;border-radius:50%;
+  background:rgba(255,59,59,.12);color:#FF6B6B;font-weight:900;font-size:.8rem;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.problem-close{
+  margin-top:30px;padding:26px 28px;border-radius:18px;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg,rgba(255,106,0,.12),rgba(255,122,24,.04));
+  font-size:1.15rem;font-weight:800;color:#fff;max-width:720px;
+}
+
+/* ---------- BLOQUE 3: promesa ---------- */
+.promise{
+  max-width:820px;margin:0 auto;text-align:center;
+  padding:56px 40px;border-radius:28px;
+  position:relative;overflow:hidden;
+}
+.promise::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(255,106,0,.18),transparent 70%);
+  pointer-events:none;
+}
+.promise p{
+  position:relative;font-size:clamp(1.3rem,2.6vw,1.9rem);
+  font-weight:800;line-height:1.35;color:#fff;
+}
+.promise p b{
+  background:linear-gradient(135deg,var(--orange),var(--orange-soft));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* ---------- BLOQUE 4: detalles + form ---------- */
+#registro{padding-top:70px;}
+.registro-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.detail-card{padding:38px;}
+.detail-row{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.detail-row:last-child{border-bottom:none;}
+.detail-icon{font-size:1.4rem;width:40px;text-align:center;flex:none;}
+.detail-row div b{display:block;color:#fff;font-weight:800;font-size:1.02rem;}
+.detail-row div span{color:var(--muted);font-size:.88rem;}
+
+.countdown{display:flex;gap:10px;margin-top:26px;}
+.countdown .c-box{
+  flex:1;text-align:center;padding:14px 6px;border-radius:14px;
+  background:rgba(255,106,0,.08);border:1px solid var(--border);
+}
+.countdown .c-num{font-size:1.5rem;font-weight:900;color:var(--orange-soft);line-height:1;}
+.countdown .c-lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);margin-top:6px;}
+
+.form-card{padding:38px;}
+.form-card h3{font-size:1.3rem;color:#fff;margin-bottom:6px;}
+.form-card .form-sub{color:var(--muted);font-size:.92rem;margin-bottom:26px;}
+.f-group{margin-bottom:16px;}
+.f-group label{
+  display:block;font-size:.72rem;font-weight:800;color:var(--orange-soft);
+  margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;
+}
+.f-group input{
+  width:100%;padding:15px 16px;border-radius:12px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  color:#fff;font-size:.98rem;font-family:inherit;outline:none;
+  transition:border-color .2s, background .2s;
+}
+.f-group input::placeholder{color:rgba(255,255,255,.32);}
+.f-group input:focus{border-color:var(--orange);background:rgba(255,106,0,.08);}
+.f-error{font-size:.76rem;color:#FF8A65;margin-top:6px;display:none;}
+.form-submit{
+  width:100%;padding:19px;border-radius:12px;border:none;
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  color:#0a0603;font-weight:900;font-size:1.02rem;cursor:pointer;
+  font-family:inherit;margin-top:6px;
+  box-shadow:0 12px 40px rgba(255,106,0,.4);
+  transition:transform .2s, opacity .2s;
+}
+.form-submit:hover{transform:translateY(-2px);}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.form-privacy{font-size:.72rem;color:var(--muted2);text-align:center;margin-top:14px;}
+
+/* ---------- BLOQUE 5: para quién ---------- */
+.who-grid{display:grid;gap:14px;max-width:720px;margin-top:30px;}
+.who-grid li{
+  list-style:none;display:flex;gap:14px;align-items:flex-start;
+  padding:18px 20px;border-radius:16px;
+  background:var(--glass);border:1px solid var(--border-soft);
+}
+.who-grid li::before{
+  content:'✓';flex:none;width:26px;height:26px;border-radius:50%;
+  background:rgba(255,106,0,.16);color:var(--orange-soft);font-weight:900;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+
+/* ---------- BLOQUE 6: autoridad ---------- */
+.auth-card{display:flex;gap:34px;align-items:center;padding:44px;}
+.auth-avatar{
+  flex:none;width:120px;height:120px;border-radius:50%;
+  background:linear-gradient(135deg,var(--orange),var(--orange2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.4rem;font-weight:900;color:#0a0603;
+  box-shadow:0 0 0 4px rgba(255,106,0,.18), 0 20px 50px rgba(255,106,0,.35);
+}
+.auth-card h3{color:#fff;font-size:1.25rem;margin-bottom:10px;}
+.auth-card p{color:var(--muted);font-size:1rem;max-width:520px;}
+
+/* ---------- BLOQUE 7: faq ---------- */
+.faq-item{
+  border:1px solid var(--border-soft);border-radius:16px;
+  margin-bottom:12px;overflow:hidden;background:var(--glass);
+}
+.faq-item summary{
+  list-style:none;cursor:pointer;padding:20px 24px;
+  font-weight:800;color:#fff;font-size:1rem;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:'+';font-size:1.4rem;color:var(--orange-soft);flex:none;
+  transition:transform .25s;
+}
+.faq-item[open] summary::after{transform:rotate(45deg);}
+.faq-item .faq-a{padding:0 24px 22px;color:var(--muted);font-size:.96rem;line-height:1.6;}
+
+/* ---------- BLOQUE 8: cierre ---------- */
+.close-final{text-align:center;padding-bottom:140px;}
+.close-final h2{font-size:clamp(2rem,4.2vw,3rem);max-width:760px;margin:0 auto 16px;}
+.close-final .section-sub{margin:0 auto 36px;}
+
+footer{
+  position:relative;z-index:1;padding:32px 0 100px;text-align:center;
+  color:var(--muted2);font-size:.78rem;border-top:1px solid rgba(255,255,255,.06);
+}
+footer .fw{font-weight:900;color:var(--orange-soft);letter-spacing:.06em;}
+
+/* ---------- sticky mobile CTA ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  padding:14px 18px calc(14px + env(safe-area-inset-bottom));
+  background:rgba(6,4,2,.88);backdrop-filter:blur(14px);
+  border-top:1px solid var(--border);
+  display:none;
+}
+.sticky-cta a{display:block;width:100%;text-align:center;}
+
+@media (max-width:900px){
+  .registro-grid{grid-template-columns:1fr;}
+  .auth-card{flex-direction:column;text-align:center;}
+  section{padding:70px 0;}
+}
+@media (max-width:640px){
+  .sticky-cta{display:block;}
+  body{padding-bottom:78px;}
+  .wrap{padding:0 18px;}
+  .countdown{gap:6px;}
+  .countdown .c-num{font-size:1.2rem;}
+  .detail-card,.form-card{padding:26px;}
+  .auth-card{padding:30px;}
+}
+</style>
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div class="glow glow-3"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wordmark-bg">AGENTIX</div>
+  <div class="wrap hero-inner">
+    <span class="pill"><span class="dot"></span> MASTERCLASS GRATIS EN VIVO · MIÉRCOLES 15 DE JULIO · 7:00 PM</span>
+    <h1>Usa la IA para <em>vender mucho más</em>, aunque seas principiante.</h1>
+    <p class="hero-sub">Aprende a instalar tu propia agencia de marketing con IA y crear campañas que venden — aunque sientas que la tecnología no es lo tuyo.</p>
+    <a href="#registro" class="btn-cta">QUIERO MI CUPO GRATIS →</a>
+    <div class="btn-micro"><b>100% gratis</b> · en vivo · cupos limitados por sesión</div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 2: PROBLEMA ================= -->
+<section id="problema">
+  <div class="wrap">
+    <div class="eyebrow">El problema</div>
+    <h2>Si tienes un negocio, esto te suena…</h2>
+    <ul class="problem-list">
+      <li>Sabes que necesitas contenido y anuncios para vender, pero no tienes tiempo de hacerlos.</li>
+      <li>Pagas agencias o freelancers caros y no ves los resultados que prometieron.</li>
+      <li>Publicas, pero no llegan clientes de verdad.</li>
+      <li>La IA suena a la solución… pero sientes que "eso no es para ti" o no sabes por dónde empezar.</li>
+    </ul>
+    <div class="problem-close">No necesitas contratar una agencia. Necesitas aprender a usar la que ya cabe en tu computador.</div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 3: PROMESA ================= -->
+<section id="promesa">
+  <div class="wrap">
+    <div class="glass promise">
+      <p>Te vas con la claridad de cómo montar <b>tu propio sistema de marketing con IA</b> — sin depender de nadie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 4: DETALLES + FORM ================= -->
+<section id="registro">
+  <div class="wrap">
+    <div class="eyebrow center" style="text-align:center;">Reserva tu lugar</div>
+    <h2 class="center" style="text-align:center;">Los cupos son limitados por sesión</h2>
+    <div class="registro-grid" style="margin-top:40px;">
+
+      <div class="glass detail-card">
+        <div class="detail-row">
+          <div class="detail-icon">📅</div>
+          <div><b>Miércoles 15 de julio de 2026</b><span>Fecha de la masterclass en vivo</span></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">🕐</div>
+          <div><b>7:00 pm</b><span>Hora Colombia</span></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">📍</div>
+          <div><b>En vivo · Online</b><span>Recibirás el enlace de acceso por WhatsApp</span></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">🎟️</div>
+          <div><b>Cupos limitados por sesión</b><span>Regístrate ahora para asegurar el tuyo</span></div>
+        </div>
+
+        <div class="countdown" id="countdown">
+          <div class="c-box"><div class="c-num" id="cd-d">--</div><div class="c-lbl">Días</div></div>
+          <div class="c-box"><div class="c-num" id="cd-h">--</div><div class="c-lbl">Horas</div></div>
+          <div class="c-box"><div class="c-num" id="cd-m">--</div><div class="c-lbl">Min</div></div>
+          <div class="c-box"><div class="c-num" id="cd-s">--</div><div class="c-lbl">Seg</div></div>
+        </div>
+      </div>
+
+      <div class="glass form-card">
+        <h3>Regístrate gratis</h3>
+        <p class="form-sub">Deja tus datos y asegura tu cupo para el miércoles.</p>
+        <form id="registro-form" novalidate>
+          <div class="f-group">
+            <label for="f-whatsapp">WhatsApp</label>
+            <input type="tel" id="f-whatsapp" name="whatsapp" placeholder="Ej: 573001234567 (con código de país)" autocomplete="tel" required>
+            <div class="f-error" id="err-whatsapp">Escribe un número válido con código de país.</div>
+          </div>
+          <div class="f-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+            <div class="f-error" id="err-email">Escribe un email válido.</div>
+          </div>
+          <button type="submit" class="form-submit" id="form-submit-btn">RESERVAR MI CUPO GRATIS →</button>
+          <div class="form-privacy">Tus datos están seguros. Sin spam, solo la info del webinar.</div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 5: PARA QUIÉN ================= -->
+<section id="para-quien">
+  <div class="wrap">
+    <div class="eyebrow">¿Es para ti?</div>
+    <h2>Este webinar es para ti si…</h2>
+    <ul class="who-grid">
+      <li>Estás cansado de depender de agencias caras o de que nadie te dé resultados.</li>
+      <li>Quieres aprender a usar IA aunque hoy sientas que "no eres de tecnología".</li>
+      <li>Estás dispuesto a seguir un paso a paso simple y aplicarlo esta misma semana.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 6: AUTORIDAD ================= -->
+<section id="autoridad">
+  <div class="wrap">
+    <div class="eyebrow">Quién te va a enseñar</div>
+    <div class="glass auth-card">
+      <div class="auth-avatar">OS</div>
+      <div>
+        <h3>Orlando Sánchez &amp; equipo</h3>
+        <p>Construimos nuestro negocio 100% con inteligencia artificial. Hoy enseñamos a emprendedores a montar su propia agencia de marketing con IA — fácil, económico y sin conocimientos técnicos. En este webinar te mostramos exactamente cómo lo hacemos, paso a paso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 7: FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <h2>Antes de que te registres</h2>
+    <div style="max-width:760px;margin-top:30px;">
+      <details class="faq-item">
+        <summary>¿Tengo que saber de tecnología?</summary>
+        <div class="faq-a">No. Te enseñamos desde cero, paso a paso. Si sabes usar WhatsApp, puedes hacer esto.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta la masterclass?</summary>
+        <div class="faq-a">Es gratis. Solo regístrate y conéctate en vivo.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Sirve para mi tipo de negocio?</summary>
+        <div class="faq-a">Sí. El marketing con IA funciona para cualquier negocio que quiera más clientes.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Y si no puedo conectarme en vivo?</summary>
+        <div class="faq-a">Regístrate igual y te avisamos de la próxima sesión.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOQUE 8: CIERRE ================= -->
+<section class="close-final">
+  <div class="wrap">
+    <h2>Deja de depender de agencias.<br>Aprende a hacer tu marketing con IA.</h2>
+    <p class="section-sub center">Gratis, en vivo, este miércoles 15 de julio a las 7:00 pm.</p>
+    <a href="#registro" class="btn-cta">SÍ, QUIERO MI CUPO →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fw">AGENTIX</div>
+    <div style="margin-top:6px;">Evento educativo independiente. No afiliado a Meta ni a WhatsApp Inc.</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#registro" class="btn-cta">QUIERO MI CUPO GRATIS →</a>
+</div>
+
+<script>
+/* ===================== CONFIG — REVISA ANTES DE PUBLICAR ===================== */
+// Número de WhatsApp de negocio que recibe los registros (con código de país, sin +, sin espacios).
+// TODO: reemplaza este placeholder por tu número real antes de pautar.
+const WHATSAPP_NEGOCIO = '573000000000';
+
+// Webhook de Centralize.es (Configuración > Integraciones > Webhooks en tu cuenta).
+// Mientras esto siga con el valor de placeholder, el envío al CRM se omite silenciosamente
+// (el registro igual se completa vía WhatsApp, no se pierde el lead).
+const CENTRALIZE_WEBHOOK_URL = 'PEGA_AQUI_TU_WEBHOOK_DE_CENTRALIZE';
+/* =============================================================================== */
+
+// Countdown al miércoles 15 de julio 2026, 7:00pm hora Colombia (UTC-5, sin horario de verano)
+const TARGET_DATE = new Date('2026-07-15T19:00:00-05:00').getTime();
+
+function updateCountdown(){
+  const now = Date.now();
+  const diff = TARGET_DATE - now;
+  const els = {d:document.getElementById('cd-d'),h:document.getElementById('cd-h'),m:document.getElementById('cd-m'),s:document.getElementById('cd-s')};
+  if(diff <= 0){
+    els.d.textContent = '00'; els.h.textContent = '00'; els.m.textContent = '00'; els.s.textContent = '00';
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff/(1000*60*60))%24);
+  const m = Math.floor((diff/(1000*60))%60);
+  const s = Math.floor((diff/1000)%60);
+  els.d.textContent = String(d).padStart(2,'0');
+  els.h.textContent = String(h).padStart(2,'0');
+  els.m.textContent = String(m).padStart(2,'0');
+  els.s.textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===================== FORM =====================
+const form = document.getElementById('registro-form');
+const btn = document.getElementById('form-submit-btn');
+const whatsappInput = document.getElementById('f-whatsapp');
+const emailInput = document.getElementById('f-email');
+const errWhatsapp = document.getElementById('err-whatsapp');
+const errEmail = document.getElementById('err-email');
+
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+function validPhone(v){ return /^\+?\d{9,15}$/.test(v.replace(/[\s()-]/g,'')); }
+
+// Limpia el error en vivo apenas el campo vuelve a ser válido (no solo al reenviar)
+whatsappInput.addEventListener('input', function(){
+  if(validPhone(whatsappInput.value.trim())) errWhatsapp.style.display = 'none';
+});
+emailInput.addEventListener('input', function(){
+  if(validEmail(emailInput.value.trim())) errEmail.style.display = 'none';
+});
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const whatsapp = whatsappInput.value.trim();
+  const email = emailInput.value.trim();
+
+  let ok = true;
+  errWhatsapp.style.display = 'none';
+  errEmail.style.display = 'none';
+
+  if(!validPhone(whatsapp)){ errWhatsapp.style.display='block'; ok=false; }
+  if(!validEmail(email)){ errEmail.style.display='block'; ok=false; }
+  if(!ok) return;
+
+  btn.disabled = true;
+  btn.textContent = 'RESERVANDO TU CUPO...';
+
+  // Evento de conversión para Meta Ads (activar cuando tengas el Pixel instalado arriba en <head>)
+  // if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+
+  // Best-effort: envío a Centralize.es (no bloquea el registro si falla)
+  if (CENTRALIZE_WEBHOOK_URL && CENTRALIZE_WEBHOOK_URL.indexOf('PEGA_AQUI') === -1) {
+    fetch(CENTRALIZE_WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ whatsapp, email, origen: 'webinar-agentix', fecha_webinar: '2026-07-15' })
+    }).catch(()=>{});
+  }
+
+  const mensaje = `Hola, quiero mi cupo para la Masterclass Gratis de Marketing con IA (miércoles 15 de julio, 7:00pm).\nEmail: ${email}`;
+  const waUrl = `https://wa.me/${WHATSAPP_NEGOCIO}?text=${encodeURIComponent(mensaje)}`;
+
+  window.open(waUrl, '_blank');
+
+  setTimeout(function(){
+    window.location.href = 'webinar-agentix-gracias.html';
+  }, 350);
+});
+</script>
+
+</body>
+</html>
