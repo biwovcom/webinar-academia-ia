@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#060504">
-<title>¡Cupo reservado! Únete al grupo de WhatsApp | AGENTIX</title>
-<meta name="description" content="Tu cupo para la Masterclass Gratis de Marketing con IA quedó reservado. Únete al grupo de WhatsApp para recibir el enlace de acceso y recordatorios.">
-<meta name="robots" content="noindex">
+<meta name="theme-color" content="#060402">
+<meta name="robots" content="noindex, nofollow">
+<title>¡Registro confirmado! Únete al grupo | AGENTIX</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 
 <!-- ============================================================
-     META PIXEL — pega aquí el código base del Pixel de Meta.
-     Evento recomendado en esta página: "CompleteRegistration"
-     (ver <script> al final, línea comentada lista para activar)
+     META PIXEL — pega aquí el mismo código base del Pixel de Meta
+     que en la landing principal (opcional: evento de vista de esta
+     página puente sirve para medir cuántos llegan hasta acá).
 ============================================================ -->
 
 <style>
@@ -21,6 +20,8 @@
   --orange:#FF6A00;
   --orange2:#FF7A18;
   --orange-soft:#FFB673;
+  --blue:#64CEFB;
+  --blue-soft:#A9E4FD;
   --text:#FFFFFF;
   --muted:rgba(255,255,255,.66);
   --muted2:rgba(255,255,255,.44);
@@ -30,107 +31,92 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-  background:var(--bg);color:var(--text);
+  background:var(--bg);
+  color:var(--text);
   font-family:'Plus Jakarta Sans','Segoe UI',sans-serif;
-  line-height:1.6;min-height:100vh;
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
   display:flex;align-items:center;justify-content:center;
-  padding:40px 20px;position:relative;overflow-x:hidden;
+  padding:24px;
 }
-.glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;}
-.glow-1{width:640px;height:640px;background:var(--orange);top:-220px;left:-160px;opacity:.30;}
-.glow-2{width:520px;height:520px;background:var(--orange2);bottom:-160px;right:-140px;opacity:.24;}
-body::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  opacity:.5;
-}
-.wordmark-bg{
-  position:absolute;left:50%;top:-40px;transform:translateX(-50%);
-  font-size:clamp(5rem,20vw,12rem);font-weight:900;
-  color:transparent;-webkit-text-stroke:1px rgba(255,122,24,.13);
-  white-space:nowrap;pointer-events:none;z-index:0;user-select:none;
-}
+.glow{position:fixed;border-radius:50%;filter:blur(130px);pointer-events:none;z-index:0;}
+.glow-1{width:620px;height:620px;background:var(--orange);top:-220px;left:-160px;opacity:.30;}
+.glow-2{width:520px;height:520px;background:var(--blue);bottom:-180px;right:-160px;opacity:.16;}
 
 .card{
-  position:relative;z-index:1;max-width:560px;width:100%;
+  position:relative;z-index:1;width:100%;max-width:480px;
+  padding:40px 32px;border-radius:24px;text-align:center;
   background:var(--glass);border:1px solid var(--border-soft);
-  border-radius:28px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  padding:52px 40px;text-align:center;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
 }
-.check{
-  width:76px;height:76px;border-radius:50%;margin:0 auto 22px;
-  background:linear-gradient(135deg,var(--orange),var(--orange2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:2.2rem;color:#0a0603;font-weight:900;
-  box-shadow:0 0 0 6px rgba(255,106,0,.14), 0 20px 50px rgba(255,106,0,.4);
-}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;
-  padding:7px 16px;border-radius:99px;font-size:.7rem;font-weight:800;
-  text-transform:uppercase;letter-spacing:.08em;
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:99px;margin-bottom:22px;
+  font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
   background:rgba(255,106,0,.12);border:1px solid var(--border);color:var(--orange-soft);
 }
 h1{
-  font-size:clamp(1.6rem,4vw,2.1rem);font-weight:900;line-height:1.25;
-  margin-bottom:12px;color:#fff;
+  font-weight:900;letter-spacing:-.01em;
+  font-size:clamp(1.5rem,5vw,2rem);
+  margin-bottom:14px;color:#fff;
 }
-h1 span{color:var(--orange-soft);}
-.sub{color:var(--muted);font-size:1rem;margin-bottom:30px;}
+.sub{color:var(--muted);font-size:.98rem;max-width:380px;margin:0 auto 28px;}
 
-.recap{
-  display:grid;gap:10px;text-align:left;margin-bottom:32px;
-  padding:20px;border-radius:16px;background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
+.spinner{
+  width:22px;height:22px;margin:0 auto 28px;border-radius:50%;
+  border:3px solid rgba(255,255,255,.14);border-top-color:var(--orange);
+  animation:spin .8s linear infinite;
 }
-.recap div{display:flex;gap:12px;align-items:center;font-size:.92rem;color:var(--muted);}
-.recap div b{color:#fff;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
-.btn-wa{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;padding:19px;border-radius:14px;
+.btn-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:19px 24px;border-radius:99px;
+  font-size:1rem;font-weight:900;letter-spacing:.01em;
   background:linear-gradient(135deg,var(--orange),var(--orange2));
-  color:#0a0603;font-weight:900;font-size:1.02rem;text-decoration:none;
-  box-shadow:0 12px 44px rgba(255,106,0,.42);
+  color:#0a0603;text-decoration:none;
+  box-shadow:0 12px 44px rgba(255,106,0,.42), inset 0 1px 0 rgba(255,255,255,.35);
   transition:transform .2s, box-shadow .2s;
 }
-.btn-wa:hover{transform:translateY(-3px);box-shadow:0 18px 60px rgba(255,106,0,.58);}
-.wa-note{font-size:.82rem;color:var(--muted2);margin-top:14px;}
-.back-link{
-  display:inline-block;margin-top:26px;color:var(--muted2);
-  font-size:.85rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 18px 60px rgba(255,106,0,.58), inset 0 1px 0 rgba(255,255,255,.35);}
+.btn-cta:active{transform:translateY(-1px);}
+
+.note{margin-top:20px;color:var(--muted2);font-size:.82rem;}
+
+@media (max-width:480px){
+  .card{padding:32px 22px;}
+  .btn-cta{padding:17px 20px;font-size:.94rem;}
 }
-.back-link:hover{color:var(--orange-soft);border-color:var(--orange-soft);}
 </style>
 </head>
 <body>
 
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
-<div class="wordmark-bg">AGENTIX</div>
 
-<div class="card">
-  <div class="check">✓</div>
-  <span class="pill">Registro confirmado</span>
-  <h1 id="titulo">¡Listo, <span style="color:var(--orange-soft);">tu cupo</span> está reservado!</h1>
-  <p class="sub">Falta un último paso para asegurar tu acceso: únete al grupo de WhatsApp donde compartimos el enlace de acceso y los recordatorios del webinar.</p>
-
-  <div class="recap">
-    <div>📅 <b>Miércoles 15 de julio de 2026</b></div>
-    <div>🕐 <b>7:00 pm</b> — hora Colombia</div>
-    <div>📍 <b>En vivo · Online</b></div>
-  </div>
-
-  <a href="https://chat.whatsapp.com/LYauyh8qypGJE1QfNzbpbV?s=cl&p=a&ilr=4" target="_blank" rel="noopener" class="btn-wa" id="wa-group-btn">
-    ÚNETE AL GRUPO DE WHATSAPP →
-  </a>
-  <div class="wa-note">Ahí recibirás el enlace para conectarte en vivo el miércoles.</div>
-
-  <a href="webinar-agentix.html" class="back-link">Volver al inicio</a>
-</div>
+<main class="card">
+  <span class="badge">✅ Registro confirmado</span>
+  <h1>Ya casi estás dentro</h1>
+  <p class="sub">Te estamos llevando al grupo de WhatsApp del webinar. Si no se abre solo en unos segundos, toca el botón.</p>
+  <div class="spinner" aria-hidden="true"></div>
+  <a href="https://chat.whatsapp.com/LYauyh8qypGJE1QfNzbpbV" id="join-btn" class="btn-cta">UNIRME AL GRUPO DE WHATSAPP →</a>
+  <p class="note">Ahí recibirás el enlace de acceso a la clase en vivo.</p>
+</main>
 
 <script>
-// Evento de conversión para Meta Ads (activar cuando tengas el Pixel instalado arriba en <head>)
-// if (typeof fbq === 'function') { fbq('track', 'CompleteRegistration'); }
+/* ===================== CONFIG — debe ser el mismo link que en la landing principal ===================== */
+const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/LYauyh8qypGJE1QfNzbpbV';
+/* =========================================================================================================== */
+
+document.getElementById('join-btn').href = WHATSAPP_GROUP_LINK;
+
+// Auto-redirect. Si el navegador (ej. in-app de Instagram/Facebook) lo bloquea,
+// el botón de arriba ya está visible y funcional como respaldo — nadie se queda sin salida.
+setTimeout(function(){
+  window.location.href = WHATSAPP_GROUP_LINK;
+}, 900);
 </script>
 
 </body>
